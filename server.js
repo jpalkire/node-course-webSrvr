@@ -53,19 +53,19 @@ app.get('/about', (req, res) => {
     });
 });
 
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        portfolioMsg: 'Portfolio page for JP_Dev',
+        pageTitle: 'Projects',
+    })
+})
+
 app.get('/bad', (req, res) => {
     res.send({
         errorMessage: 'Error handling request'
     })
-})
-
-app.get('/portfolio', (req, res) => {
-    res.render('portfolio.hbs', {
-        portfolioMsg: 'Portfolio page for JP_Dev',
-        pageTitle: 'Portfolio',
-    })
-})
-
+});
 
 app.listen(port, () => {
     console.log(`Server is up on port ${port}`);
